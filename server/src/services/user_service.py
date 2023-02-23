@@ -1,5 +1,6 @@
 from bson import ObjectId
 
+
 class UserService():
     def __init__(self, db):
         self.collection = db.users
