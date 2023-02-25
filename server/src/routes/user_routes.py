@@ -1,6 +1,6 @@
+from fastapi import Body
 from main import app, db
 from services.user_service import UserService
-from fastapi import Body
 
 api_path = "/users"
 user_service = UserService(db)
@@ -30,7 +30,7 @@ def get_user(id: str):
         return {"error": str(e)}, 500
 
 @app.put(f"{api_path}/{id}")
-async def edit_user(id: str, body = Body()):
+def edit_user(id: str, body = Body()):
     try:
         result = user_service.update(id, body)
         return {"result": result}

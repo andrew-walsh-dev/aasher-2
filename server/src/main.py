@@ -13,3 +13,4 @@ mongo_client = MongoClient(mongo_uri, server_api=ServerApi('1'))
 db = mongo_client.aasher
 
 import routes.user_routes
+import routes.bot_routes
